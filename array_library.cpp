@@ -1,6 +1,6 @@
 //
 // Created by Carlos R. Arias on 10/5/22.
-//
+// https://github.com/csc2330-master/array-library-01
 
 
 #include "array_library.h"

@@ -1,11 +1,13 @@
 #include <iostream>
 #include <cassert>
+#include <sstream>
 
 #include "array_library.h"
 
 using std::cout;
 using std::cin;
 using std::endl;
+using std::stringstream;
 
 int main() {
     int data[] = {7, 4, 1, 9, 0, 11, 21, 3, 8, 5};
@@ -33,11 +35,23 @@ int main() {
 
     assert(FindAverage(data, SIZE) - 6.9 < 0.000001);
 
-    PrintArray(cout, data, SIZE);
-    cout << endl;
-    SelectionSort(data, SIZE);
-    PrintArray(cout, data, SIZE);
-    cout << endl;
+    stringstream input("0 7 2 8 1 10 6 11 9 3");
+    ReadArray(input, data, SIZE);
+    assert(data[0] == 0);
+    assert(data[1] == 7);
+    assert(data[2] == 2);
+    assert(data[3] == 8);
+    assert(data[4] == 1);
+    assert(data[5] == 10);
+    assert(data[6] == 6);
+    assert(data[7] == 11);
+    assert(data[8] == 9);
+    assert(data[9] == 3);
+    stringstream  output;
+    PrintArray(output, data, SIZE);
+    assert(output.str() == "0 7 2 8 1 10 6 11 9 3 ");
+
+    cout << "Passed all the test... Bin Search not yet" << endl;
 
     return 0;
 }
