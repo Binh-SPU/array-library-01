@@ -33,5 +33,11 @@ int main() {
 
     assert(FindAverage(data, SIZE) - 6.9 < 0.000001);
 
+    PrintArray(cout, data, SIZE);
+    cout << endl;
+    SelectionSort(data, SIZE);
+    PrintArray(cout, data, SIZE);
+    cout << endl;
+
     return 0;
 }
