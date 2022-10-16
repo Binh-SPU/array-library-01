@@ -28,5 +28,7 @@ int BinarySearch(int array[], unsigned int size, int key);
 void PrintArray(ostream& output, int array[], unsigned int size);
 void ReadArray(istream& input, int array[], unsigned int size);
 
+unsigned int MinimumPosition(int array[], unsigned int size, unsigned int startPosition = 0);
+
 
 #endif //ARRAY_LIBRARY_01_ARRAY_LIBRARY_H
