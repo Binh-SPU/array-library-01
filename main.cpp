@@ -17,6 +17,17 @@ int main() {
 
     const unsigned int SIZE = sizeof(data) / sizeof (data[0]);
 
+    assert(BinarySearch(data, SIZE, 0) == 0);
+    assert(BinarySearch(data, SIZE, 1) == 1);
+    assert(BinarySearch(data, SIZE, 3) == 2);
+    assert(BinarySearch(data, SIZE, 4) == 3);
+    assert(BinarySearch(data, SIZE, 5) == 4);
+    assert(BinarySearch(data, SIZE, 7) == 5);
+    assert(BinarySearch(data, SIZE, 8) == 6);
+    assert(BinarySearch(data, SIZE, 9) == 7);
+    assert(BinarySearch(data, SIZE, 11) == 8);
+    assert(BinarySearch(data, SIZE, 21) == 9);
+
     assert(LinearSearch(data, SIZE, 7) == 0);
     assert(LinearSearch(data, SIZE, 4) == 1);
     assert(LinearSearch(data, SIZE, 1) == 2);

@@ -67,14 +67,33 @@ void SelectionSort(int array[], unsigned int size){
     }
 }
 double FindMedian(int array[], unsigned int size){
-    SelectionSort(array, size);
     if (size % 2 == 0)
         return (static_cast<double>(array[size/2]) + static_cast<double>(array[size/2]+ 1)) / 2.0;
     else
         return array[size / 2];
 }
 int BinarySearch(int array[], unsigned int size, int key){
-    // Someday...
+    int secondaryArray[size];
+    for (int i = 0; i < size; ++i) {
+        secondaryArray[i] = array[i];
+    }
+    SelectionSort(secondaryArray, size);
+    int low = 0;
+    int high = size - 1;
+    int mid;
+    while (high >= low) {
+        mid = (high + low) / 2;
+        if (key < secondaryArray[mid]) {
+            high = mid - 1;
+        }
+        else if (key > secondaryArray[mid]) {
+            low = mid + 1;
+        }
+        else {
+            return mid;
+        }
+    }
+    return -1;
 }
 void PrintArray(ostream& output, int array[], unsigned int size){
     for (int i = 0; i < size; ++i) {
