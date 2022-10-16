@@ -49,6 +49,7 @@ int main() {
     assert(data[9] == 3);
     stringstream  output;
     PrintArray(output, data, SIZE);
+    assert(input.str() == "0 7 2 8 1 10 6 11 9 3");
     assert(output.str() == "0 7 2 8 1 10 6 11 9 3 ");
 
     cout << "Passed all the test... Bin Search not yet" << endl;
