@@ -1,6 +1,6 @@
 //
 // Created by Carlos R. Arias on 10/5/22.
-//
+// https://github.com/csc2330-master/array-library-01
 
 
 #include "array_library.h"
@@ -36,14 +36,14 @@ double FindAverage(int array[], unsigned int size){
     }
     return sum / size;
 }
-unsigned int MinimumPosition(int array[], unsigned int size, unsigned int startPosition = 0){
+unsigned int MinimumPosition(int array[], unsigned int size, unsigned int startPosition){
 //    unsigned minPosition = 0;
 //    for (int i = startPosition; i < size; ++i) {
 //        if (array[minPosition] > array[i])
 //            minPosition = i;
 //    }
 //    return minPosition;
-    int minimum = array[0];
+    int minimum = array[startPosition];
     unsigned int minimumPosition = startPosition;
     for (int i = startPosition; i < size; ++i) {
         if (minimum > array[i]){
@@ -53,8 +53,18 @@ unsigned int MinimumPosition(int array[], unsigned int size, unsigned int startP
     }
     return minimumPosition;
 }
-void SelectionSort(int array[], unsigned int size){
 
+void Swap(int& a, int& b){
+    int c = a;
+    a = b;
+    b = c;
+}
+void SelectionSort(int array[], unsigned int size){
+    unsigned int minPos;
+    for (int i = 0; i < size; ++i) {
+        minPos = MinimumPosition(array, size, i);
+        Swap(array[i], array[minPos]);
+    }
 }
 double FindMedian(int array[], unsigned int size){
     SelectionSort(array, size);
@@ -76,6 +86,5 @@ void ReadArray(istream& input, int array[], unsigned int size){
         input >> array[i];
     }
 }
-
 
 
