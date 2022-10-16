@@ -63,6 +63,9 @@ int main() {
     assert(input.str() == "0 7 2 8 1 10 6 11 9 3");
     assert(output.str() == "0 7 2 8 1 10 6 11 9 3 ");
 
+    SelectionSort(data, SIZE);
+    ReadArray(input, data, SIZE);
+
     cout << "Passed all the test... Bin Search not yet" << endl;
 
     return 0;
